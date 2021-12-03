@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">To Do</string>
+    <string name="txt_tarea_1">tarea1</string>
+    <string name="txt_about">about</string>
+    <string name="txt_tarea_2">Tarea2</string>
+    <string name="txt_tarea_3">Tarea3</string>
+    <string name="text_email">Email</string>
+    <string name="text_password">password</string>
+    <string name="text_btn_login">login</string>
+    <string name="text_btn_registrer">Registrer</string>
+    <string name="prefs_file">com.example.todo.PREFERENCE_FILE_KEY</string>
+</resources>
