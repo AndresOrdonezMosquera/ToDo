@@ -13,7 +13,9 @@ class MyTaskListAdpter (context : AppCompatActivity, val info: Bundle)
     : RecyclerView.Adapter<MyTaskListAdpter.MyViewHolder>(){
     class MyViewHolder(val layout : View): RecyclerView.ViewHolder(layout)
     private  var context : AppCompatActivity = context
+    var  myTaskid : ArrayList<Int> = info.getIntegerArrayList("id") as ArrayList<Int>
     var  myTaskTitles : ArrayList<String> = info.getStringArrayList("titles") as ArrayList<String>
+    var  myTaskDescription : ArrayList<String> = info.getStringArrayList("description") as ArrayList<String>
     var  myTaskTimes : ArrayList<String> = info.getStringArrayList("times") as ArrayList<String>
     var  myTaskPlaces : ArrayList<String> = info.getStringArrayList("places") as ArrayList<String>
 
@@ -31,8 +33,10 @@ class MyTaskListAdpter (context : AppCompatActivity, val info: Bundle)
             Toast.makeText(holder.itemView.context,textViewTask.text,Toast.LENGTH_LONG).show()
             val datos = Bundle()
             datos.putString("tarea",textViewTask.text as String)
+            datos.putString("descripcion",myTaskDescription[position])
             datos.putString("hora",textViewTime.text as String)
             datos.putString("lugar",myTaskPlaces[position])
+            datos.putInt("id" ,myTaskid[position])
             context.getSupportFragmentManager()?.beginTransaction()
                 ?.setReorderingAllowed(true)
                 ?.replace(R.id.fragment_container_view,DetailFragment::class.java,datos,"detail")

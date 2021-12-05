@@ -3,34 +3,55 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NewTaskActivity">
+    android:orientation="vertical"
+    tools:context=".UpTaskActivity">
+
+    <TextView
+        android:id="@+id/textViewId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:visibility="gone"></TextView>
+
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/editTextTitle"
+        android:id="@+id/uptextTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="16dp"
         android:hint="Event"/>
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/editTextDescription"
+        android:id="@+id/uptextDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="16dp"
         android:hint="Description"/>
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/editTextTime"
+        android:id="@+id/uptextTime"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="16dp"
         android:hint="Date and time"/>
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/editTextPlaces"
+        android:id="@+id/uptextPlace"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="16dp"
         android:hint="Place"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="onSave"
-        android:text="SAVE"/>
+        android:layout_margin="16dp"
+        android:text="Update"
+        android:onClick="onUp"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Delete"
+        android:onClick="onDelete"/>
+
 
 </LinearLayout>

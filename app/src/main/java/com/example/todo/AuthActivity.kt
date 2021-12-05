@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.EditText
 import android.widget.LinearLayout
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -28,7 +29,7 @@ class AuthActivity : AppCompatActivity() {
     private var editPassword : EditText?= null
     private var authLayout : LinearLayout?=null
     private var btnGoogle : SignInButton?=null
-
+    private var textViewforgotPassword : TextView?= null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_auth)
@@ -36,8 +37,14 @@ class AuthActivity : AppCompatActivity() {
         editPassword = findViewById(R.id.editPassword)
         authLayout = findViewById(R.id.authLayouth)
         btnGoogle = findViewById(R.id.btnGoogle)
+        textViewforgotPassword = findViewById(R.id.textViewforgotPassword)
         session()
         loginGoogle()
+        textViewforgotPassword!!.setOnClickListener{
+            val intent = Intent(this,ForgotPasswordMainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 
     fun loginGoogle() {

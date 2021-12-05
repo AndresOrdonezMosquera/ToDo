@@ -25,7 +25,7 @@ class ToDoViewModel (private val repository: ToDoRepository): ViewModel(){
         }
         return idTask
     }
-    fun inserTasks (toDo: List<ToDo>?): List<Long>?{
+    fun insertTasks (toDo: List<ToDo>?): List<Long>?{
         var idTask : List<Long>?=null
         viewModelScope.launch {
             idTask = repository.insertTasks(toDo)

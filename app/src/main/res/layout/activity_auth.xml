@@ -36,6 +36,16 @@
             android:ems="10"
             android:inputType="textPassword"/>
     </com.google.android.material.textfield.TextInputLayout>
+    <TextView
+        android:id="@+id/textViewforgotPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="I forgot the password"
+        android:gravity="end"
+        android:layout_margin="16dp"
+        >
+
+    </TextView>
 
     <LinearLayout
         android:layout_width="match_parent"

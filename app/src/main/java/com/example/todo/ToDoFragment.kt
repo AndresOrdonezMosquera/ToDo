@@ -13,15 +13,19 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
+import com.example.todo.room_database.ToDo
 import com.example.todo.room_database.ToDoDatabase
 import com.example.todo.room_database.ToDoRepository.ToDoRepository
 import com.example.todo.room_database.viewmodel.ToDoViewModel
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
 class ToDoFragment : Fragment() {
 
+    var myTaskid: ArrayList<Int> = ArrayList()
     var myTaskTitles: ArrayList<String> = ArrayList()
+    var myTaskDescriptions: ArrayList<String> = ArrayList()
     var myTaskTimes: ArrayList<String> = ArrayList()
     var myTaskPlaces: ArrayList<String> = ArrayList()
     private lateinit var listRecyclerView: RecyclerView
@@ -87,8 +91,10 @@ class ToDoFragment : Fragment() {
             var recursiveScope = 0
             startActivityForResult(intent, recursiveScope)
         }
-        var info : Bundle = Bundle()
+        //var info : Bundle = Bundle()
+        info.putIntegerArrayList("id", myTaskid)
         info.putStringArrayList("titles", myTaskTitles)
+        info.putStringArrayList("descriptions", myTaskDescriptions)
         info.putStringArrayList("times", myTaskTimes)
         info.putStringArrayList("places", myTaskPlaces)
         listRecyclerView = requireView().findViewById(R.id.recyclerTodoList)
@@ -103,6 +109,7 @@ class ToDoFragment : Fragment() {
 
     private fun updateList() {
         val db = ToDoDatabase.getDatabase(requireActivity())
+        val dbFirebase = FirebaseFirestore.getInstance()
         val toDoDAO= db.todoDao()
         /*runBlocking {
             launch {
@@ -128,15 +135,38 @@ class ToDoFragment : Fragment() {
             if (theTasks!!.size!=0) {
                 var i = 0
                 myTaskTitles.clear()
+                myTaskDescriptions.clear()
                 myTaskTimes.clear()
                 myTaskPlaces.clear()
+                myTaskid.clear()
                 while (i < theTasks.size) {
                     myTaskTitles.add(theTasks[i].title.toString())
+                    myTaskDescriptions.add(theTasks[i].title.toString())
                     myTaskTimes.add(theTasks[i].time.toString())
                     myTaskPlaces.add(theTasks[i].place.toString())
+                    myTaskid.add(theTasks[i].id)
                     i++
                 }
                 myAdapter.notifyDataSetChanged()
+            }else {
+
+                var tasks = mutableListOf<ToDo>()
+                dbFirebase.collection("ToDo").get().addOnSuccessListener {
+                    var docs = it.documents
+                    if (docs.size != 0) {
+                        var i = 1
+                        while (i <docs.size) {
+                            myTaskTitles.add(docs[i].get("title") as String)
+                            myTaskDescriptions.add(docs[i].get("description") as String)
+                            myTaskTimes.add(docs[i].get("time") as String)
+                            myTaskPlaces.add(docs[i].get("place") as String)
+                            tasks.add(ToDo(0, myTaskTitles[i], myTaskDescriptions[i], myTaskTimes[i], myTaskPlaces[i]))
+                            i++
+                        }
+                        toDoViewModel.insertTasks(tasks)
+                        myAdapter.notifyDataSetChanged()
+                    }
+                }
             }
         }
     }

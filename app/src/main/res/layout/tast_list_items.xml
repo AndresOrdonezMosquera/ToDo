@@ -22,7 +22,7 @@
             android:id="@+id/TextViewTask"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="task title"
+            android:text="agenda title"
             android:textColor="@color/Pink_500"
             android:textSize="20sp"
             android:textStyle="bold"/>

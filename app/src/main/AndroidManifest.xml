@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ToDo">
         <activity
+            android:name=".ProductoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UpTaskActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ForgotPasswordMainActivity"
+            android:exported="false" />
+        <activity
             android:name=".HomeActivity"
             android:exported="false" />
         <activity
@@ -27,7 +36,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="false"
-            android:theme="@style/Theme.ToDo.NoActionBar"></activity>
+            android:theme="@style/Theme.ToDo.NoActionBar" />
     </application>
 
 </manifest>

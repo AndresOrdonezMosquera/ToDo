@@ -16,14 +16,21 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:textSize="20dp"
-        android:text="Tarea"/>
+        android:text="Evento"/>
+    <TextView
+        android:id="@+id/textViewDescripcion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"
+        android:text="Descripcion"/>
     <TextView
         android:id="@+id/textViewHora"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:textSize="20dp"
-        android:text="Hora"/>
+        android:text="Fecha y hora"/>
     <TextView
         android:id="@+id/textViewLugar"
         android:layout_width="wrap_content"
@@ -31,5 +38,11 @@
         android:layout_marginTop="10dp"
         android:textSize="20dp"
         android:text="Lugar"/>
+    <Button
+        android:id="@+id/btnEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="Editar"/>
 
 </LinearLayout>
