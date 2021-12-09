@@ -101,7 +101,7 @@ class AuthActivity : AppCompatActivity() {
     }
 
     fun btn_prueba(boton_prueba: View) {
-        val principal= Intent(this, MainActivity::class.java)
+        val principal = Intent(this, MainActivity::class.java)
         startActivity(principal)
 
     }
