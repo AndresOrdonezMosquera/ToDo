@@ -100,10 +100,9 @@ class AuthActivity : AppCompatActivity() {
         authLayout!!.visibility= View.VISIBLE
     }
 
-    fun btn_prueba(boton_prueba: View) {
-        val principal = Intent(this, MainActivity::class.java)
+    fun btn_prueba(view: android.view.View) {
+        val principal = Intent(this,MainActivity::class.java)
         startActivity(principal)
-
     }
 
     fun onRegistrer(botonRegister: View) {

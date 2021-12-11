@@ -17,13 +17,13 @@
         android:layout_marginTop="10dp"
         android:textSize="20dp"
         android:text="Evento"/>
-    <TextView
+    <!--<TextView
         android:id="@+id/textViewDescripcion_t"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:textSize="20dp"
-        android:text="Descripcion"/>
+        android:text="Descripcion"/>-->
     <TextView
         android:id="@+id/textViewHora"
         android:layout_width="wrap_content"

@@ -15,7 +15,7 @@ class MyTaskListAdpter (context : AppCompatActivity, val info: Bundle)
     private  var context : AppCompatActivity = context
     var  myTaskid : ArrayList<Int> = info.getIntegerArrayList("id") as ArrayList<Int>
     var  myTaskTitles : ArrayList<String> = info.getStringArrayList("titles") as ArrayList<String>
-    var  myTaskDescription_t : ArrayList<String> = info.getStringArrayList("description_t") as ArrayList<String>
+    //var  myTaskDescription_t : ArrayList<String> = info.getStringArrayList("description_t") as ArrayList<String>
     var  myTaskTimes : ArrayList<String> = info.getStringArrayList("times") as ArrayList<String>
     var  myTaskPlaces : ArrayList<String> = info.getStringArrayList("places") as ArrayList<String>
 
@@ -33,7 +33,7 @@ class MyTaskListAdpter (context : AppCompatActivity, val info: Bundle)
             Toast.makeText(holder.itemView.context,textViewTask.text,Toast.LENGTH_LONG).show()
             val datos = Bundle()
             datos.putString("tarea",textViewTask.text as String)
-            datos.putString("descripcion_t",myTaskDescription_t[position])
+            //datos.putString("descripcion_t",myTaskDescription_t[position])
             datos.putString("hora",textViewTime.text as String)
             datos.putString("lugar",myTaskPlaces[position])
             datos.putInt("id" ,myTaskid[position])

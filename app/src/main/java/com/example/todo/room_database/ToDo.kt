@@ -8,7 +8,7 @@ data class ToDo (
     @PrimaryKey(autoGenerate = true)
     val id : Int,
     val title : String?,
-    val description_t : String?,
+    //val description_t : String?,
     val time : String?,
     val place : String?
         )

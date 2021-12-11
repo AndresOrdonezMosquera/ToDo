@@ -25,7 +25,7 @@ class ToDoFragment : Fragment() {
 
     var myTaskid: ArrayList<Int> = ArrayList()
     var myTaskTitles: ArrayList<String> = ArrayList()
-    var myTaskDescriptions_t: ArrayList<String> = ArrayList()
+    //var myTaskDescriptions_t: ArrayList<String> = ArrayList()
     var myTaskTimes: ArrayList<String> = ArrayList()
     var myTaskPlaces: ArrayList<String> = ArrayList()
     private lateinit var listRecyclerView: RecyclerView
@@ -94,7 +94,7 @@ class ToDoFragment : Fragment() {
         //var info : Bundle = Bundle()
         info.putIntegerArrayList("id", myTaskid)
         info.putStringArrayList("titles", myTaskTitles)
-        info.putStringArrayList("descriptions_t", myTaskDescriptions_t)
+        //info.putStringArrayList("descriptions_t", myTaskDescriptions_t)
         info.putStringArrayList("times", myTaskTimes)
         info.putStringArrayList("places", myTaskPlaces)
         listRecyclerView = requireView().findViewById(R.id.recyclerTodoList)
@@ -135,13 +135,13 @@ class ToDoFragment : Fragment() {
             if (theTasks!!.size!=0) {
                 var i = 0
                 myTaskTitles.clear()
-                myTaskDescriptions_t.clear()
+                //myTaskDescriptions_t.clear()
                 myTaskTimes.clear()
                 myTaskPlaces.clear()
                 myTaskid.clear()
                 while (i < theTasks.size) {
                     myTaskTitles.add(theTasks[i].title.toString())
-                    myTaskDescriptions_t.add(theTasks[i].title.toString())
+                    //myTaskDescriptions_t.add(theTasks[i].title.toString())
                     myTaskTimes.add(theTasks[i].time.toString())
                     myTaskPlaces.add(theTasks[i].place.toString())
                     myTaskid.add(theTasks[i].id)
@@ -157,10 +157,10 @@ class ToDoFragment : Fragment() {
                         var i = 1
                         while (i <docs.size) {
                             myTaskTitles.add(docs[i].get("title") as String)
-                            myTaskDescriptions_t.add(docs[i].get("description_t") as String)
+                            //myTaskDescriptions_t.add(docs[i].get("description_t") as String)
                             myTaskTimes.add(docs[i].get("time") as String)
                             myTaskPlaces.add(docs[i].get("place") as String)
-                            tasks.add(ToDo(0, myTaskTitles[i], myTaskDescriptions_t[i], myTaskTimes[i], myTaskPlaces[i]))
+                            tasks.add(ToDo(0, myTaskTitles[i], myTaskTimes[i], myTaskPlaces[i]))
                             i++
                         }
                         toDoViewModel.insertTasks(tasks)
