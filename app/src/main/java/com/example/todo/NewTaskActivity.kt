@@ -35,7 +35,7 @@ import com.google.android.libraries.places.api.Places.isInitialized
 class NewTaskActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListener,
     EasyPermissions.PermissionCallbacks,OnMapReadyCallback{
     lateinit var editTextTitle:EditText
-    lateinit var editTextDescription:EditText
+    lateinit var editTextDescription_t:EditText
     lateinit var editTextTime: EditText
     lateinit var editTextPlace: EditText
 
@@ -45,7 +45,7 @@ class NewTaskActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonClickLi
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_task)
         editTextTitle = findViewById(R.id.editTextTitle)
-        editTextDescription = findViewById(R.id.editTextDescription)
+        editTextDescription_t = findViewById(R.id.editTextDescription_t)
         editTextTime = findViewById(R.id.editTextTime)
         editTextPlace = findViewById(R.id.editTextPlaces)
 
@@ -77,13 +77,13 @@ class NewTaskActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonClickLi
 
     fun onSave(view: android.view.View) {
         var title: String = editTextTitle.text.toString()
-        var description: String = editTextDescription.text.toString()
+        var description_t: String = editTextDescription_t.text.toString()
         var time : String = editTextTime.text.toString()
         var place: String = editTextPlace.text.toString()
         val db = ToDoDatabase.getDatabase(this)
         val todoDAO =db.todoDao()
         val dbFirebase = FirebaseFirestore.getInstance()
-        val task = ToDo(0, title, description, time, place)
+        val task = ToDo(0, title, description_t, time, place)
         runBlocking {
             launch {
                 var result =  todoDAO.insertTask(task)
@@ -91,7 +91,7 @@ class NewTaskActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonClickLi
                     dbFirebase.collection("ToDO").document(result.toString()).set(
                         hashMapOf(
                             "title" to title,
-                            "description" to description,
+                            "description_t" to description_t,
                             "time" to time,
                             "place" to place
                         )

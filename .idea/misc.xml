@@ -17,8 +17,10 @@
         <entry key="..\:/Users/JUAN SEBASTIAN/AndroidStudioProjects/ToDov2/app/src/main/res/layout/activity_auth.xml" value="0.264" />
         <entry key="..\:/Users/JUAN SEBASTIAN/AndroidStudioProjects/ToDov2/app/src/main/res/layout/activity_forgot_password_main.xml" value="0.19791666666666666" />
         <entry key="..\:/Users/JUAN SEBASTIAN/AndroidStudioProjects/ToDov2/app/src/main/res/layout/activity_home.xml" value="0.264" />
+        <entry key="..\:/Users/JUAN SEBASTIAN/AndroidStudioProjects/ToDov2/app/src/main/res/layout/activity_lista_producto.xml" value="0.1852355072463768" />
         <entry key="..\:/Users/JUAN SEBASTIAN/AndroidStudioProjects/ToDov2/app/src/main/res/layout/activity_main.xml" value="0.19791666666666666" />
         <entry key="..\:/Users/JUAN SEBASTIAN/AndroidStudioProjects/ToDov2/app/src/main/res/layout/activity_new_task.xml" value="0.264" />
+        <entry key="..\:/Users/JUAN SEBASTIAN/AndroidStudioProjects/ToDov2/app/src/main/res/layout/activity_nuevo_producto.xml" value="0.18070652173913043" />
         <entry key="..\:/Users/JUAN SEBASTIAN/AndroidStudioProjects/ToDov2/app/src/main/res/layout/activity_producto.xml" value="0.264" />
         <entry key="..\:/Users/JUAN SEBASTIAN/AndroidStudioProjects/ToDov2/app/src/main/res/layout/activity_up_task.xml" value="0.264" />
         <entry key="..\:/Users/JUAN SEBASTIAN/AndroidStudioProjects/ToDov2/app/src/main/res/layout/content_activity_main.xml" value="0.19384057971014493" />
@@ -28,6 +30,7 @@
         <entry key="..\:/Users/JUAN SEBASTIAN/AndroidStudioProjects/ToDov2/app/src/main/res/layout/item_producto.xml" value="0.19384057971014493" />
         <entry key="..\:/Users/JUAN SEBASTIAN/AndroidStudioProjects/ToDov2/app/src/main/res/layout/nav_header.xml" value="0.19384057971014493" />
         <entry key="..\:/Users/JUAN SEBASTIAN/AndroidStudioProjects/ToDov2/app/src/main/res/layout/tast_list_items.xml" value="0.19384057971014493" />
+        <entry key="..\:/Users/JUAN SEBASTIAN/AndroidStudioProjects/ToDov2/app/src/main/res/menu/producto_menu.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>

@@ -27,6 +27,7 @@ class DetailFragment : Fragment(){
         var hora = requireArguments().getString("hora")
         var lugar = requireArguments().getString("lugar")
         var textViewTarea : TextView = fragmento.findViewById(R.id.textViewtarea)
+        var textViewDescripcion : TextView = fragmento.findViewById(R.id.textViewDescripcion_t)
         var textViewHora : TextView = fragmento.findViewById(R.id.textViewHora)
         var textViewLugar : TextView = fragmento.findViewById(R.id.textViewLugar)
         val btnEditar : Button = fragmento.findViewById(R.id.btnEdit)

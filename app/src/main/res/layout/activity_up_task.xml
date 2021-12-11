@@ -23,7 +23,7 @@
         android:layout_margin="16dp"
         android:hint="Event"/>
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/uptextDescription"
+        android:id="@+id/uptextDescription_t"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"

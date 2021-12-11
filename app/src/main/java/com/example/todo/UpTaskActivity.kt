@@ -15,7 +15,7 @@ import kotlinx.coroutines.runBlocking
 
 class UpTaskActivity : AppCompatActivity() {
     lateinit var UpTextTitle : EditText
-    lateinit var UpTextDescription : EditText
+    lateinit var UpTextDescription_t : EditText
     lateinit var UpTextTime : EditText
     lateinit var UpTextPlace : EditText
     lateinit var UpTextId : TextView
@@ -24,12 +24,12 @@ class UpTaskActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_up_task)
         UpTextTitle = findViewById(R.id.uptextTitle)
-        UpTextDescription = findViewById(R.id.uptextDescription)
+        UpTextDescription_t = findViewById(R.id.uptextDescription_t)
         UpTextTime = findViewById(R.id.uptextTime)
         UpTextPlace = findViewById(R.id.uptextPlace)
         UpTextId = findViewById(R.id.textViewId)
         UpTextTitle.setText(this.intent.getStringExtra("tarea"))
-        UpTextDescription.setText(this.intent.getStringExtra("descripcion"))
+        UpTextDescription_t.setText(this.intent.getStringExtra("descripcion_t"))
         UpTextTime.setText(this.intent.getStringExtra("hora"))
         UpTextPlace.setText(this.intent.getStringExtra("lugar"))
         UpTextId.setText(this.intent.getStringExtra("id"))
@@ -37,20 +37,20 @@ class UpTaskActivity : AppCompatActivity() {
 
     fun onUp(view: View) {
         var title : String = UpTextTitle.text.toString()
-        var description : String = UpTextDescription.text.toString()
+        var description_t : String = UpTextDescription_t.text.toString()
         var time : String = UpTextTime.text.toString()
         var place : String = UpTextPlace.text.toString()
         var id : String = UpTextId.text.toString()
         val db = ToDoDatabase.getDatabase(this)
         val toDoDAO = db.todoDao()
         val dbFirebase = FirebaseFirestore.getInstance()
-        val task = ToDo(id.toInt(), title, description, time, place)
+        val task = ToDo(id.toInt(), title, description_t, time, place)
         runBlocking {
             launch {
                 var result = toDoDAO.updateTask(task)
                 dbFirebase.collection("ToDo").document(id).set(
                     hashMapOf("title" to title,
-                              "description" to description,
+                              "description" to description_t,
                               "time" to time,
                               "place" to place)
                 )
@@ -64,7 +64,7 @@ class UpTaskActivity : AppCompatActivity() {
 
     fun onDelete(view: View) {
         var title : String = UpTextTitle.text.toString()
-        var description : String = UpTextDescription.text.toString()
+        var description_t : String = UpTextDescription_t.text.toString()
         var time : String = UpTextTime.text.toString()
         var place : String = UpTextPlace.text.toString()
         var id : String = UpTextId.text.toString()
@@ -74,7 +74,7 @@ class UpTaskActivity : AppCompatActivity() {
         val task = ToDo(
             id.toInt(),
             title,
-            description,
+            description_t,
             time,
             place
         )

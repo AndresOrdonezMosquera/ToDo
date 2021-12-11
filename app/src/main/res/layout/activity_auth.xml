@@ -78,6 +78,13 @@
         android:onClick="btn_prueba">
 
     </Button>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Producto"
+        android:onClick="btn_Producto">
+
+    </Button>
     <com.google.android.gms.common.SignInButton
         android:id="@+id/btnGoogle"
         android:layout_width="match_parent"

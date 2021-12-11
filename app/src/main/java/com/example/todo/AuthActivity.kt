@@ -157,4 +157,9 @@ class AuthActivity : AppCompatActivity() {
             }
         }
     }
+
+    fun btn_Producto(view: android.view.View) {
+        val principal = Intent(this,ListaProductoActivity::class.java)
+        startActivity(principal)
+    }
 }

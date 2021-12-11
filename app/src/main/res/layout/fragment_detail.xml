@@ -18,7 +18,7 @@
         android:textSize="20dp"
         android:text="Evento"/>
     <TextView
-        android:id="@+id/textViewDescripcion"
+        android:id="@+id/textViewDescripcion_t"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"

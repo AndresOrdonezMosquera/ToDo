@@ -7,8 +7,27 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ProductoActivity">
-    <ListView
-        android:id="@+id/lista"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+    <TextView
+        android:id="@+id/textView_Nombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="nombre"/>
+    <TextView
+        android:id="@+id/textView_Precio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="precio"/>
+    <TextView
+        android:id="@+id/textView_Detalle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="detalle"/>
+    <ImageView
+        android:id="@+id/imageView_Perfil"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/textView_Detalle"
+        app:srcCompat="@drawable/ic_launcher_background"
+        tools:layout_editor_absluteX="156dp"/>
 </LinearLayout>
